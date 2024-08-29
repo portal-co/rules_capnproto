@@ -1,13 +1,13 @@
-licenses(["notice"])  # MIT license
-
+load("@rules_capnproto//capnp:capnp_library.bzl", "capnp_capnp_library", "capnp_library")
+load("@rules_capnproto//capnp:cc_capnp_library.bzl", "cc_capnp_library")
 load(
     "@rules_capnproto//third_party/capnproto:cc_defs.bzl",
     "capnroto_cc_binary",
     "capnroto_cc_library",
     "capnroto_cc_test",
 )
-load("@rules_capnproto//capnp:capnp_library.bzl", "capnp_capnp_library", "capnp_library")
-load("@rules_capnproto//capnp:cc_capnp_library.bzl", "cc_capnp_library")
+
+licenses(["notice"])  # MIT license
 
 # --------------------------------------------------------------------------------------------------
 # capnp
@@ -385,8 +385,8 @@ capnroto_cc_test(
         "c++/src/capnp/serialize-text-test.c++",
     ],
     deps = [
-        ":capnpc",
         ":capnp_test_util",
+        ":capnpc",
         ":kj",
         ":kj_test",
     ],

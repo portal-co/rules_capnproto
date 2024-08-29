@@ -1,0 +1,12 @@
+module(name = "rules_capnproto")
+
+bazel_dep(name = "rules_cc", version = "0.0.9")
+bazel_dep(name = "zlib", version = "1.3.1.bcr.3")
+
+capnp_toolchain_extension = use_extension("//capnp:extensions.bzl", "capnp_toolchain_extension")
+use_repo(
+    capnp_toolchain_extension,
+    "capnproto",
+    "rules_capnproto_cc_toolchain",
+    "rules_capnproto_toolchain",
+)

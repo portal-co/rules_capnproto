@@ -6,6 +6,19 @@ For a list of releases and changes see the [CHANGELOG](CHANGELOG.md)
 
 ## Installing
 
+### MODULE.bazel
+
+```bzl
+bazel_dep(name = "rules_capnproto", version = "0.0.0")
+git_override(
+    module_name = "rules_capnproto",
+    commit = "<latest git commit hash>",
+    remote = "https://github.com/kgreenek/rules_capnproto.git",
+)
+```
+
+### Legacy WORKSPACE.bazel
+
 Add the following lines to your WORKSPACE file to download and initialize rules_capnproto in your repo:
 
 ```bzl
